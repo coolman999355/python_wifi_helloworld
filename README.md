@@ -1,10 +1,8 @@
-# micropython_wifi_helloworld
-# today we are going to print hello in a website with micropython
-# code u need to have a pi pico w or esp32 anything with wifi built in
 
-import network   # for connecting to wifi
-import socket    # for making a simple web server
-import time      # for sleep function
+
+import network   
+import socket  
+import time   
 
 
 port = 80
@@ -43,7 +41,7 @@ html = """<!DOCTYPE html>
 
 while True:
     cl, addr = s.accept()
-    cl.recv(1024)  # we ignore the request
+    cl.recv(1024)  
     cl.send("HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n")
     cl.send(html)
     cl.close()
